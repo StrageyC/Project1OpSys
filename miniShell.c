@@ -32,6 +32,9 @@ int main() {
          if (pid == 0) {
             /* I am the child */
             execvp(tokenv[0], tokenv);
+
+            perror("execvp");
+            exit(0);
         } else {
             /* I am the parent */
             int status;
